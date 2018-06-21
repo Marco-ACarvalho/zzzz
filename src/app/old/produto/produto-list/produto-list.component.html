@@ -1,0 +1,28 @@
+<h1>Relação de produtos</h1>
+
+<div class="form-group">
+  <a [routerLink]="['/produto/novo']" class="btn btn-lg btn-success">
+    Novo produto
+  </a>
+</div>
+
+<table class="table table-striped table-hover table-responsive">
+  <tr> <!-- Linha de cabeçalho -->
+    <th>Descrição</th>
+    <th>Preço</th>
+    <th>Quantidade</th>
+    <th>Categoria</th>
+    <th>EXCLUIR</th>
+  </tr>
+
+  <tr *ngFor="let p of produtos">
+    <td><a [routerLink]="['/produto', p._id]">{{p.descricao}}</a></td>
+    <td class="text-right">{{p.preco}}</td>
+    <td class="text-right">{{p.quantidade}}</td>
+    <td>{{p.categoria.descricao}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="excluir(p._id)">Excluir</button>
+    </td>
+  </tr>
+
+</table>

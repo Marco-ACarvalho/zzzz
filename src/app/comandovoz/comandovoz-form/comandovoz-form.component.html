@@ -1,0 +1,27 @@
+<h2>Cadastro de Comando de voz</h2>
+
+<form #f="ngForm" (ngSubmit)="enviar(f)">
+
+  <div class="form-group">
+    <label for="tipo_voz">Tipo voz</label>
+    <input type="text" class="form-control" id="tipo_voz" name="tipo_voz" required
+      [(ngModel)]="comandovoz.tipo_voz" />
+  </div>
+
+  <div class="form-group">
+      <label for="volume">Volume</label>
+      <input type="number" class="form-control" id="volume" name="volume"
+        [(ngModel)]="comandovoz.volume" step="0.01" />
+    </div>
+
+  <div class="form-group">
+    <label for="distanci_aviso">Distancia do aviso</label>
+    <input type="number" class="form-control" id="distanci_aviso" name="distanci_aviso"
+      [(ngModel)]="comandovoz.distanci_aviso" step="0.01" />
+  </div>
+
+  <div class="text-center">
+    <input type="submit" class="btn btn-primary" value="Enviar" />
+  </div>
+
+</form>

@@ -1,0 +1,33 @@
+<h2>Cadastro de Mapas</h2>
+
+<form #f="ngForm" (ngSubmit)="enviar(f)">
+
+  <div class="form-group">
+    <label for="pais">Pais</label>
+    <input type="text" class="form-control" id="pais" name="pais" required [(ngModel)]="mapa.pais" />
+  </div>
+
+  <div class="form-group">
+    <label for="estado">Estado</label>
+    <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="mapa.estado" />
+  </div>
+
+  <div class="form-group">
+    <label for="obstaculo">Obstaculo</label>
+    <input type="text" class="form-control" id="obstaculo" name="obstaculo" [(ngModel)]="mapa.obstaculo" />
+  </div>
+
+  <div class="form-group">
+    <label for="pontointeresse">Ponto de Interesse</label>
+    <select class="form-control" id="pontointeresse" name="pontointeresse" required [(ngModel)]="mapa.pontointeresse">
+      <option *ngFor="let pi of pontointeresses" [ngValue]="pi._id">
+        {{pi.restaurantes}}
+      </option>
+    </select>
+  </div>
+
+  <div class="text-center">
+    <input type="submit" class="btn btn-primary" value="Enviar" />
+  </div>
+
+</form>

@@ -1,0 +1,26 @@
+<h1>Relação de pontos</h1>
+
+<div class="form-group">
+  <a [routerLink]="['/ponto/novo']" class="btn btn-lg btn-success">
+    Novo ponto
+  </a>
+</div>
+
+<table class="table table-striped table-hover table-responsive">
+  <tr> <!-- Linha de cabeçalho -->
+    <th>Inicial</th>
+    <th>Final</th>
+    <th>Mapa</th>
+    <th>EXCLUIR</th>
+  </tr>
+
+  <tr *ngFor="let p of pontos">
+    <td><a [routerLink]="['/ponto', p._id]">{{p.inicial}}</a></td>
+    <td class="text-right">{{p.final}}</td>
+    <td>{{p.mapa.pais}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="excluir(p._id)">Excluir</button>
+    </td>
+  </tr>
+
+</table>

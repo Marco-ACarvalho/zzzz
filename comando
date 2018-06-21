@@ -1,0 +1,21 @@
+#!/bin/bash
+#ng generate component produto/produto-list
+#ng generate service produto/produto
+
+#npm i @ng-bootstrap/ng-bootstrap --save
+
+#npm i bootstrap --save
+
+# Gerar serviço para a categoria
+#ng g s mapa/mapa
+#ng g s ponto/ponto
+#ng g s comandovoz/comandovoz
+#ng g s pontointeresse/pontointeresse
+#ng g s rota/rota
+
+# Gerar componente de listagem para a categoria
+#ng g c mapa/mapa-list
+#ng g c ponto/ponto-list
+#ng g c comandovoz/comandovoz-list
+#ng g c pontointeresse/pontointeresse-list
+#ng g c rota/rota-list

@@ -1,0 +1,28 @@
+<h2>Cadastro de Pontos</h2>
+
+<form #f="ngForm" (ngSubmit)="enviar(f)">
+
+  <div class="form-group">
+    <label for="inicial">Inicial</label>
+    <input type="text" class="form-control" id="inicial" name="inicial" required [(ngModel)]="ponto.inicial" />
+  </div>
+
+  <div class="form-group">
+    <label for="final">Final</label>
+    <input type="text" class="form-control" id="final" name="final" [(ngModel)]="ponto.final" />
+  </div>
+
+  <div class="form-group">
+    <label for="mapa">Mapa</label>
+    <select class="form-control" id="mapa" name="mapa" required [(ngModel)]="ponto.mapa">
+      <option *ngFor="let map of mapas" [ngValue]="map._id">
+        {{map.pais}}
+      </option>
+    </select>
+  </div>
+
+  <div class="text-center">
+    <input type="submit" class="btn btn-primary" value="Enviar" />
+  </div>
+
+</form>

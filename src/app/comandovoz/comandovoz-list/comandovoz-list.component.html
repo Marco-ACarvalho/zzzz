@@ -1,0 +1,26 @@
+<h1>Relação de Comandos de Voz</h1>
+
+<div class="form-group">
+  <a [routerLink]="['/comandovoz/novo']" class="btn btn-lg btn-success">
+    Novo Comando de voz
+  </a>
+</div>
+
+<table class="table table-striped table-hover table-responsive">
+  <tr> <!-- Linha de cabeçalho -->
+    <th>tipo_voz</th>
+    <th>volume</th>
+    <th>distanci_aviso</th>
+    <th>EXCLUIR</th>
+  </tr>
+
+  <tr *ngFor="let cv of comandovoz">
+    <td><a [routerLink]="['/comandovoz', cv._id]">{{cv.tipo_voz}}</a></td>
+    <td class="text-right">{{cv.volume}}</td>
+    <td class="text-right">{{cv.distanci_aviso}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="excluir(cv._id)">Excluir</button>
+    </td>
+  </tr>
+
+</table>
